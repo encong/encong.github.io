@@ -1,0 +1,24 @@
+---
+layout: post
+title:  Module
+date:   2016-07-29 01:08:00 +0800
+categories: Module
+tag: KVO
+---
+
+## KVO
+
+**Key-Value Observing**
+&nbsp;&nbsp;&nbsp;它提供一种机制，当指定的对象的属性被修改后，则对象就会接受到通知。
+简单的说就是每次指定的被观察的对象的属性被修改后，KVO就会自动通
+知相应的观察者了。
+```
+[_walker addObserver:self
+           forKeyPath:@"age"
+                 options:NSKeyValueObservingOptionNew
+                 context:nil
+ ];
+```
+**keypath**发生变化，就会调用这个回调函数`- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context;
+`
+**[KVO指南连接](http://www.cocoachina.com/ios/20160803/17265.html)**
